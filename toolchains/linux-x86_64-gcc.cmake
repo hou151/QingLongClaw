@@ -1,0 +1,22 @@
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR x86_64)
+
+find_program(X8664_GCC NAMES x86_64-linux-gnu-gcc-11 x86_64-linux-gnu-gcc)
+find_program(X8664_GXX NAMES x86_64-linux-gnu-g++-11 x86_64-linux-gnu-g++)
+
+if (X8664_GCC)
+  set(CMAKE_C_COMPILER "${X8664_GCC}")
+else()
+  set(CMAKE_C_COMPILER x86_64-linux-gnu-gcc)
+endif()
+
+if (X8664_GXX)
+  set(CMAKE_CXX_COMPILER "${X8664_GXX}")
+else()
+  set(CMAKE_CXX_COMPILER x86_64-linux-gnu-g++)
+endif()
+
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)

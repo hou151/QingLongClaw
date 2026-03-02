@@ -1,0 +1,2 @@
+# Add one URL per line.
+# Runtime injects this list into the agent system prompt.

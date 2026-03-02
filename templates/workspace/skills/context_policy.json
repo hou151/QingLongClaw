@@ -1,0 +1,7 @@
+{
+  "history_extra_messages": 0,
+  "max_total_history_messages": 400,
+  "memory_retention_tokens": 1000000,
+  "retrieval_max_tokens_per_request": 12000,
+  "retrieval_top_k": 24
+}
