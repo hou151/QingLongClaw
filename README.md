@@ -2,6 +2,8 @@
 
 QingLongClaw 是一个基于 C++ 开发的本地任务代理与网关项目，支持通过命令行和 Web 前端进行任务交互。
 
+![图片描述](./assets/c5952af7cded0f52cd89b5d023a7f405.jpg)
+
 本项目主可执行文件：
 - `qinglongclaw`
 - `qinglongclaw-bin`（构建脚本生成的运行入口）
@@ -81,40 +83,13 @@ sudo apt install -y \
 cd /home/<your-user>/ppx/QingLongClaw
 ```
 
-### 步骤 2：清理旧缓存（避免 CMake 路径冲突）
-
-```bash
-rm -rf build build-x86_64 build-aarch64
-```
-
-### 步骤 3：构建 x86_64（推荐）
+### 步骤 2：构建 x86_64（推荐）
 
 ```bash
 bash ./scripts/build_linux_x86_64.sh
 ```
 
-构建完成后可直接运行：
-- `./qinglongclaw-bin`
-
-### 步骤 4：初始化配置与工作空间
-
-```bash
-./qinglongclaw-bin onboard
-./qinglongclaw-bin status
-```
-
-默认路径：
-- 配置文件：`~/.qinglongclaw/config.json`
-- 认证文件：`~/.qinglongclaw/auth.json`
-- 工作空间：`~/.qinglongclaw/workspace`
-
-### 步骤 5：配置模型 API（示例：GLM）
-
-```bash
-./qinglongclaw-bin auth login --provider glm --token <YOUR_API_KEY>
-```
-
-### 步骤 6：启动网关
+### 步骤 3：启动网关
 
 ```bash
 ./qinglongclaw-bin gateway
@@ -129,15 +104,26 @@ bash ./scripts/build_linux_x86_64.sh
 ### 方式 A：本机访问
 
 - Linux / WSL 内部访问：`http://127.0.0.1:18790/`
-- Windows 浏览器访问 WSL：`http://localhost:18790/`
-
+- （推荐）Windows 浏览器访问 WSL：`http://localhost:18790/`
+- 进入到页面后先进性配置，输入自己的api即可进行聊天，并且可以使用飞书直接链接
+- 如何构建飞书的机器人可以B站教学参考：【一次过的openclaw部署与飞书联动打造你的专属机器人】 https://www.bilibili.com/video/BV1TSABz5EZD/?share_source=copy_web&vd_source=90a64e77b9a56f5c9b9f65fd2127f895
 ### 方式 B：局域网访问
+- 打印出主机的局域网IP: 'hostname -I'
 
 - 访问地址：`http://<主机局域网IP>:18790/`
+
 - 需要保证：
   - 网关已启动
+  
   - 防火墙已放行 18790 端口
+  
   - 访问设备与主机在同一局域网
+  
+    ![图片描述](./assets/2c464e6d-ef5c-4c54-b22e-86c70177cda0.png)
+  
+    ![图片描述](./assets/53d49af1-1368-48d4-bd49-6ac9c86967ba.png)
+    
+    ![图片描述](./assets/c0353597-64b9-4f22-869c-a96205103df5.png)
 
 ---
 
@@ -209,3 +195,6 @@ curl http://127.0.0.1:18790/health
 - Provider 与模型名是否匹配
 - API Base 是否正确
 - 网络或代理是否可用
+=======
+# QingLongClaw
+使用C++编辑的简单的claw机器人助手
